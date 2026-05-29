@@ -17,6 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
             if (nav) nav.classList.remove('open');
         });
     }
+
+    // Lightbox: delegación de eventos (funciona con imágenes dinámicas)
+    document.addEventListener('click', function (e) {
+        var target = e.target;
+        if (target.tagName === 'IMG' && target.closest('.gallery-item')) {
+            openLightbox(target);
+        }
+    });
 });
 
 // ---------- Progressive Gallery Load ----------
@@ -55,3 +63,27 @@ function loadMoreLanding() {
 function loadMoreGallery() {
     loadMoreItems('.gallery', 'loadMoreGallery', 'goToIg');
 }
+
+// ---------- Lightbox ----------
+function openLightbox(img) {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = img.src;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    var lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+// Cerrar con Escape
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+});
