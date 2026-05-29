@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Horror Tattoo - Tatuajes personalizados y flash en Alto Hospicio. Dharla Pumarino, artista del tatuaje.">
+    <title>Horror Tattoo — Arte que marca la piel</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <style>
+        .gallery-preview {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery-preview .gallery-item {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 4px;
+            background-color: #0a0a0a;
+            border: 1px solid #111;
+            cursor: pointer;
+            transition: border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .gallery-preview .gallery-item.hidden {
+            display: none;
+        }
+
+        .gallery-preview .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-preview .gallery-item:hover {
+            border-color: #cc0000;
+            transform: scale(1.02);
+        }
+
+        .gallery-preview .gallery-item .placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0a0a0a;
+            color: #333;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            user-select: none;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-preview {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+                padding: 0 0.5rem 3rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .gallery-preview {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="./" class="logo">
+                <img src="./assets/logo.jpg" alt="Horror Tattoo Logo">
+                HORROR TATOO
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="./" class="active">Inicio</a></li>
+                <li><a href="galery.html">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="./assets/logo.jpg" alt="Horror Tattoo" class="logo-main">
+        <img src="./assets/standaloneLeft-removebg-preview.png" alt="" class="hero-deco left">
+        <img src="./assets/standaloneRight-removebg.png" alt="" class="hero-deco right">
+        <div class="hero-title">
+            <h1>HORROR <span>TATOO</span></h1>
+        </div>
+        <div class="divider"></div>
+        <p class="slogan">Agenda abril abierta</p>
+        <div class="cta-buttons">
+            <a href="https://www.instagram.com/horror_.tattoo/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda por Instagram &rarr;</a>
+            <a href="#proyectos" class="btn btn-outline">Ver proyectos &darr;</a>
+        </div>
+    </section>
+
+    <section class="section-divider" id="proyectos">
+        <h2>Algunos <span>Proyectos</span></h2>
+        <p>m&aacute;s de 500 trabajos &mdash; desliza para ver m&aacute;s</p>
+        <div class="divider"></div>
+    </section>
+
+    <div class="gallery-wrapper">
+        <img src="./assets/serpienteAbajo-removebg-preview.png" alt="" class="serpent-deco left segment-1">
+        <img src="./assets/serpienteArriba-removebg-preview.png" alt="" class="serpent-deco right segment-1">
+        <img src="./assets/serpienteAbajo-removebg-preview.png" alt="" class="serpent-deco left segment-2 hidden">
+        <img src="./assets/serpienteArriba-removebg-preview.png" alt="" class="serpent-deco right segment-2 hidden">
+        <section class="gallery-preview">
+            <div class="gallery-item"><img src="./assets/projects/01.png" alt="Tatuaje 01"></div>
+            <div class="gallery-item"><img src="./assets/projects/02.png" alt="Tatuaje 02"></div>
+            <div class="gallery-item"><img src="./assets/projects/03.png" alt="Tatuaje 03"></div>
+            <div class="gallery-item"><img src="./assets/projects/04.png" alt="Tatuaje 04"></div>
+            <div class="gallery-item"><img src="./assets/projects/05.png" alt="Tatuaje 05"></div>
+            <div class="gallery-item"><img src="./assets/projects/06.png" alt="Tatuaje 06"></div>
+            <div class="gallery-item"><img src="./assets/projects/07.png" alt="Tatuaje 07"></div>
+            <div class="gallery-item"><img src="./assets/projects/08_bn.png" alt="Tatuaje 08"></div>
+            <div class="gallery-item"><img src="./assets/projects/09.png" alt="Tatuaje 09"></div>
+
+            <div class="gallery-item hidden"><img src="./assets/projects/10_bn.png" alt="Tatuaje 10"></div>
+            <div class="gallery-item hidden"><img src="./assets/projects/11_bn.png" alt="Tatuaje 11"></div>
+            <div class="gallery-item hidden"><img src="./assets/projects/12_bn.png" alt="Tatuaje 12"></div>
+            <div class="gallery-item hidden"><img src="./assets/projects/13.png" alt="Tatuaje 13"></div>
+            <div class="gallery-item hidden"><img src="./assets/projects/14_bn.png" alt="Tatuaje 14"></div>
+            <div class="gallery-item hidden"><img src="./assets/projects/15.png" alt="Tatuaje 15"></div>
+            <div class="gallery-item hidden"><img src="./assets/projects/16_bn.png" alt="Tatuaje 16"></div>
+            <div class="gallery-item hidden"><img src="./assets/projects/17.png" alt="Tatuaje 17"></div>
+            <div class="gallery-item hidden"><img src="./assets/projects/18.png" alt="Tatuaje 18"></div>
+        </section>
+    </div>
+
+    <section class="load-more" id="loadMoreLanding">
+        <button class="btn btn-outline" onclick="loadMoreLanding()">Desplegar m&aacute;s &darr;</button>
+    </section>
+
+    <section class="load-more" id="goToGallery" style="display: none;">
+        <p style="color: #666; margin-bottom: 1.5rem; font-size: 0.9rem; letter-spacing: 1px;">&iquest;Quieres verlos con m&aacute;s atenci&oacute;n?</p>
+        <a href="galery.html" class="btn btn-primary">Ir a proyectos &rarr;</a>
+    </section>
+
+    <footer class="contact-footer" id="contacto">
+        <div class="container">
+            <h2><span>Contacto - Agenda tu sesión</span></h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="icon">&#64;</span>
+                    <a href="https://www.instagram.com/horror_.tattoo/" target="_blank" rel="noopener noreferrer">@horror_.tattoo</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">&#9906;</span>
+                    <span>Alto Hospicio, Chile</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">&#9742;</span>
+                    <a href="https://www.instagram.com/horror_.tattoo/" target="_blank" rel="noopener noreferrer">Agenda por DM</a>
+                </div>
+            </div>
+            <div class="divider-sm"></div>
+            <p class="payments">Pagos: Transferencia &bull; Efectivo &bull; Giftcards</p>
+            <p class="copy">&copy; 2026 Horror Tattoo &mdash; Dharla Pumarino</p>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,582 @@
+/* ============================================
+   HORROR TATOO - Styles
+   Base: Negro puro | Acento: Rojo | Texto: Blanco
+   ============================================ */
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000000;
+    color: #f5f5f5;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.97);
+    border-bottom: 1px solid #111;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    position: relative;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    letter-spacing: 2px;
+    position: absolute;
+    left: 1.5rem;
+}
+
+.navbar .logo img {
+    height: 40px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.navbar .nav-links a {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #777;
+    border-radius: 4px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #ff1a1a;
+    background-color: rgba(255, 26, 26, 0.08);
+}
+
+.navbar .nav-links a.active {
+    color: #cc0000;
+}
+
+/* ---------- Mobile Menu Toggle ---------- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 6rem 1.5rem 4rem;
+    background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 70%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(204, 0, 0, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(204, 0, 0, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero .logo-main {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #111;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: #f5f5f5;
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 span {
+    color: #cc0000;
+}
+
+.hero-title {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-deco {
+    position: absolute;
+    height: clamp(12rem, 40vh, 28rem);
+    width: auto;
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+.hero-deco.left {
+    right: calc(50% + 12rem);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero-deco.right {
+    left: calc(50% + 12rem);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 1024px) {
+    .hero-deco {
+        height: clamp(8rem, 25vh, 16rem);
+    }
+    .hero-deco.left {
+        right: calc(50% + 8rem);
+    }
+    .hero-deco.right {
+        left: calc(50% + 8rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-deco {
+        height: clamp(5rem, 15vh, 10rem);
+    }
+    .hero-deco.left {
+        right: calc(50% + 5rem);
+    }
+    .hero-deco.right {
+        left: calc(50% + 5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-deco {
+        display: none;
+    }
+}
+
+.hero .slogan {
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    font-weight: 300;
+    color: #666;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero .slogan::before,
+.hero .slogan::after {
+    content: ' — ';
+    color: #cc0000;
+}
+
+.hero .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #cc0000;
+    color: #f5f5f5;
+}
+
+.btn-primary:hover {
+    background-color: #ff1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(204, 0, 0, 0.3);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #f5f5f5;
+    border: 1px solid #222;
+}
+
+.btn-outline:hover {
+    border-color: #cc0000;
+    color: #cc0000;
+    transform: translateY(-2px);
+}
+
+/* ---------- Divider ---------- */
+.divider {
+    width: 60px;
+    height: 2px;
+    background-color: #cc0000;
+    margin: 1.5rem auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    background-color: #000000;
+    border-top: 1px solid #111;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 0.85rem;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+.footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.footer .social-links a {
+    color: #444;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.2s ease;
+}
+
+.footer .social-links a:hover {
+    color: #cc0000;
+}
+
+/* ---------- Gallery Wrapper & Serpent Decorations ---------- */
+.gallery-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.serpent-deco {
+    position: absolute;
+    width: auto;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+}
+
+.serpent-deco.segment-1 {
+    top: 0;
+    height: 100vh;
+}
+
+.serpent-deco.segment-2 {
+    top: 100vh;
+    height: 100vh;
+}
+
+.serpent-deco.left {
+    left: -230px;
+}
+
+.serpent-deco.right {
+    right: -230px;
+}
+
+.serpent-deco.segment-2.hidden {
+    display: none;
+}
+
+@media (max-width: 1600px) {
+    .serpent-deco {
+        opacity: 0.2;
+    }
+}
+
+@media (max-width: 1200px) {
+    .serpent-deco {
+        display: none;
+    }
+}
+
+/* ---------- Section Divider (shared) ---------- */
+.section-divider {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.section-divider h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #f5f5f5;
+}
+
+.section-divider h2 span {
+    color: #cc0000;
+}
+
+.section-divider p {
+    color: #666;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+}
+
+/* ---------- Load More (shared) ---------- */
+.load-more {
+    text-align: center;
+    padding: 0 1.5rem 4rem;
+}
+
+.load-more .btn {
+    min-width: 220px;
+}
+
+/* ---------- Contact Footer (shared) ---------- */
+.contact-footer {
+    background-color: #050505;
+    border-top: 1px solid #111;
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+.contact-footer .container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-footer h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #f5f5f5;
+    margin-bottom: 2.5rem;
+}
+
+.contact-footer h2 span {
+    color: #cc0000;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.75rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0.5rem;
+    color: #888;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border: 1px solid #111;
+    border-radius: 4px;
+    background-color: #080808;
+    transition: border-color 0.2s ease;
+}
+
+.contact-item:hover {
+    border-color: #222;
+}
+
+.contact-item .icon {
+    width: 20px;
+    text-align: center;
+    color: #cc0000;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.contact-item a {
+    color: #aaa;
+    transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: #cc0000;
+}
+
+.contact-footer .divider-sm {
+    width: 40px;
+    height: 1px;
+    background-color: #222;
+    margin: 1.5rem auto;
+}
+
+.contact-footer .payments {
+    color: #555;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-top: 1.5rem;
+}
+
+.contact-footer .copy {
+    font-size: 0.78rem;
+    color: #333;
+    letter-spacing: 1px;
+    margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar .nav-links {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.99);
+        border-bottom: 1px solid #111;
+        padding: 0.5rem 0;
+        gap: 0;
+        transform: translateY(-110%);
+        transition: transform 0.3s ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .navbar .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .navbar .nav-links a {
+        display: block;
+        padding: 0.85rem 1.5rem;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .hero h1 {
+        letter-spacing: 4px;
+    }
+
+    .hero .slogan::before,
+    .hero .slogan::after {
+        content: '';
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+}
