@@ -240,12 +240,13 @@ img {
 .hero .slogan {
     font-size: clamp(1rem, 2.5vw, 1.35rem);
     font-weight: 300;
-    color: #666;
+    color: #bbb;
     letter-spacing: 4px;
     text-transform: uppercase;
     margin-top: 1rem;
     position: relative;
     z-index: 1;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.07);
 }
 
 .hero .slogan::before,
@@ -304,7 +305,7 @@ img {
 .divider {
     width: 60px;
     height: 2px;
-    background-color: #cc0000;
+    background-color: #000000;
     margin: 1.5rem auto;
     position: relative;
     z-index: 1;

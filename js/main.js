@@ -18,6 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Mes dinámico en el slogan (zona horaria Santiago de Chile)
+    var monthSpan = document.getElementById('current-month');
+    if (monthSpan) {
+        monthSpan.textContent = new Intl.DateTimeFormat('es-CL', {
+            timeZone: 'America/Santiago',
+            month: 'long'
+        }).format(new Date());
+    }
+
     // Lightbox: delegación de eventos (funciona con imágenes dinámicas)
     document.addEventListener('click', function (e) {
         var target = e.target;
